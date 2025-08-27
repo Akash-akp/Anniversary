@@ -44,7 +44,7 @@ function App() {
   const photos = [photo1,photo2,photo3,photo4,photo5,photo6,photo7,photo8,photo9,photo10,photo11,photo12,photo13,photo14,photo15,photo16,photo17,photo18,photo19,photo20,photo21];
 
   const nextStage = () => {
-    setStage(prev => Math.min(prev + 1, 8));
+    setStage(prev => Math.min((prev + 1)%9, 8));
   };
 
   const startJourney = () => {
@@ -362,7 +362,16 @@ function App() {
     <p className="text-3xl text-gray-700 mb-8">
       I made this just for you. Hope you love it! 💖
     </p>
+     <div className='mt-10'>
+        <button 
+          onClick={()=>{nextStage(); setIsMusicPlaying(true);}}
+          className="bg-gradient-to-r from-pink-400 via-violet-500 to-violet-900 hover:shadow-2xl text-white px-12 py-4 rounded-full text-xl font-bold transform transition-all duration-300 hover:scale-110 animate-rainbow-glow"
+        >
+          Start Over 🔄
+        </button>
+      </div>
   </div>
+  
 )}
 
 
