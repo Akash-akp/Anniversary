@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Music, VolumeX, Volume2 } from 'lucide-react';
-import audio from '../audio/ssvid.net--Best-of-Old-Hindi-Love-Songs-Soulful-Reimagined-Collection_128kbps.m4a.mp3'
+import audio from '../audio/ssvid.net--Mere-Hi-Liye-feat-Aditya-Rikhari_128kbps.m4a.mp3'
 
 interface MusicPlayerProps {
   isPlaying: boolean;
@@ -18,7 +18,6 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ isPlaying, onToggle }) => {
       audioRef.current.volume = isMuted ? 0 : volume;
       if (isPlaying) {
         if (!hasStarted) {
-          audioRef.current.currentTime = 240; // Start at 4:00 only the first time
           setHasStarted(true);
         }
         audioRef.current.play().catch(console.error);
